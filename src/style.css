@@ -1,0 +1,64 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  --color-highlight: rgb(49, 45, 44);
+  --color-text: rgb(70, 66, 65);
+  --color-light-grey: rgb(231, 228, 227);
+  --color-light: rgb(251, 248, 247);
+  --color-white: rgb(255, 255, 255);
+
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+.container {
+  max-width: 60em;
+  margin: auto;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.title {
+  margin-bottom: 3rem;
+}
+
+section {
+  border: solid 1px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-jc-sb {
+  justify-content: space-between;
+}
+
+.flex-ai-c {
+  align-items: center;
+}
+
+.main .container {
+  gap: 2rem;
+}
+
+.recent,
+.add {
+  flex: 1;
+}
