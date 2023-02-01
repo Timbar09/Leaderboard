@@ -4,6 +4,9 @@ export const scoresArr = [
   { user: 'Timbar', score: 1000 },
 ];
 
+const gameId = 'DzTobOKlFqCNaD87Ic3E';
+const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores`;
+
 export const addScoreToArr = (score) => {
   scoresArr.push(score);
 };

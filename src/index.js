@@ -1,6 +1,6 @@
 import './style.css';
 import Score from './modules/score.js';
-import { scoresArr, addScoreToArr, addScoreToDOM } from './addScore.js';
+import { scoresArr, addScoreToArr, addScoreToDOM } from './modules/addScore.js';
 
 const form = document.querySelector('.add__form');
 

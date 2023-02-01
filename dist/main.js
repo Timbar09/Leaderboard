@@ -10,23 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/addScore.js":
-/*!*************************!*\
-  !*** ./src/addScore.js ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addScoreToArr\": () => (/* binding */ addScoreToArr),\n/* harmony export */   \"addScoreToDOM\": () => (/* binding */ addScoreToDOM),\n/* harmony export */   \"scoresArr\": () => (/* binding */ scoresArr)\n/* harmony export */ });\nvar scoresArr = [{\n  user: 'Miles',\n  score: 1300\n}, {\n  user: 'Mosweu',\n  score: 1500\n}, {\n  user: 'Timbar',\n  score: 1000\n}];\nvar addScoreToArr = function addScoreToArr(score) {\n  scoresArr.push(score);\n};\nvar addScoreToDOM = function addScoreToDOM(score) {\n  var scoreItem = document.createElement('li');\n  scoreItem.className = 'recent__score';\n  scoreItem.textContent = \"\".concat(score.user, \": \").concat(score.score);\n  var scoresContainer = document.querySelector('.recent__scores');\n  scoresContainer.appendChild(scoreItem);\n};\n\n//# sourceURL=webpack://leaderboard/./src/addScore.js?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_score_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/score.js */ \"./src/modules/score.js\");\n/* harmony import */ var _addScore_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addScore.js */ \"./src/addScore.js\");\n\n\n\nvar form = document.querySelector('.add__form');\nform.addEventListener('submit', function (e) {\n  e.preventDefault();\n  var user = document.querySelector('#user');\n  var score = document.querySelector('#score');\n  var newScore = new _modules_score_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"](user.value, score.value);\n  (0,_addScore_js__WEBPACK_IMPORTED_MODULE_2__.addScoreToArr)(newScore);\n  (0,_addScore_js__WEBPACK_IMPORTED_MODULE_2__.addScoreToDOM)(newScore);\n  user.value = '';\n  score.value = '';\n});\n_addScore_js__WEBPACK_IMPORTED_MODULE_2__.scoresArr.forEach(_addScore_js__WEBPACK_IMPORTED_MODULE_2__.addScoreToDOM);\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_score_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/score.js */ \"./src/modules/score.js\");\n/* harmony import */ var _modules_addScore_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/addScore.js */ \"./src/modules/addScore.js\");\n\n\n\nvar form = document.querySelector('.add__form');\nform.addEventListener('submit', function (e) {\n  e.preventDefault();\n  var user = document.querySelector('#user');\n  var score = document.querySelector('#score');\n  var newScore = new _modules_score_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"](user.value, score.value);\n  (0,_modules_addScore_js__WEBPACK_IMPORTED_MODULE_2__.addScoreToArr)(newScore);\n  (0,_modules_addScore_js__WEBPACK_IMPORTED_MODULE_2__.addScoreToDOM)(newScore);\n  user.value = '';\n  score.value = '';\n});\n_modules_addScore_js__WEBPACK_IMPORTED_MODULE_2__.scoresArr.forEach(_modules_addScore_js__WEBPACK_IMPORTED_MODULE_2__.addScoreToDOM);\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/addScore.js":
+/*!*********************************!*\
+  !*** ./src/modules/addScore.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addScoreToArr\": () => (/* binding */ addScoreToArr),\n/* harmony export */   \"addScoreToDOM\": () => (/* binding */ addScoreToDOM),\n/* harmony export */   \"scoresArr\": () => (/* binding */ scoresArr)\n/* harmony export */ });\nvar scoresArr = [{\n  user: 'Miles',\n  score: 1300\n}, {\n  user: 'Mosweu',\n  score: 1500\n}, {\n  user: 'Timbar',\n  score: 1000\n}];\nvar gameId = 'DzTobOKlFqCNaD87Ic3E';\nvar url = \"https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/\".concat(gameId, \"/scores\");\nvar addScoreToArr = function addScoreToArr(score) {\n  scoresArr.push(score);\n};\nvar addScoreToDOM = function addScoreToDOM(score) {\n  var scoreItem = document.createElement('li');\n  scoreItem.className = 'recent__score';\n  scoreItem.textContent = \"\".concat(score.user, \": \").concat(score.score);\n  var scoresContainer = document.querySelector('.recent__scores');\n  scoresContainer.appendChild(scoreItem);\n};\n\n//# sourceURL=webpack://leaderboard/./src/modules/addScore.js?");
 
 /***/ }),
 
