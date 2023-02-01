@@ -1,8 +1,9 @@
 import './style.css';
 import Score from './modules/scoreClass.js';
-import { addScore, getScores, renderScoresToDOM } from './modules/functions.js';
+import { addScore, renderScoresToDOM } from './modules/functions.js';
 
 const form = document.querySelector('.add__form');
+const refreshBtn = document.querySelector('.recent__refresh');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -14,5 +15,7 @@ form.addEventListener('submit', (e) => {
   addScore(newScore);
   form.reset();
 });
+
+refreshBtn.addEventListener('click', renderScoresToDOM);
 
 renderScoresToDOM();
