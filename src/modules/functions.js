@@ -1,15 +1,16 @@
-export const scoresArr = [
-  { user: 'Miles', score: 1300 },
-  { user: 'Mosweu', score: 1500 },
-  { user: 'Timbar', score: 1000 },
-];
-
 const gameId = 'DzTobOKlFqCNaD87Ic3E';
 const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores`;
 
-export const addScoreToArr = (score) => {
-  scoresArr.push(score);
+// Fetch scores form API
+export const getScores = async () => {
+  const response = await fetch(`${url}`);
+  const { result } = await response.json();
+  return result;
 };
+
+// export const addScoreToArr = (score) => {
+//   scoresArr.push(score);
+// };
 
 export const addScoreToDOM = (score) => {
   const scoreItem = document.createElement('li');
