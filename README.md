@@ -141,7 +141,7 @@ You can deploy this project by:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Implement styling to the application.**
+- [ ] **Implement more functionality.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
