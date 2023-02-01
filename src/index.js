@@ -1,8 +1,9 @@
 import './style.css';
-import Score from './modules/score.js';
-import { scoresArr, addScoreToArr, addScoreToDOM } from './addScore.js';
+import Score from './modules/scoreClass.js';
+import { addScore, renderScoresToDOM } from './modules/functions.js';
 
 const form = document.querySelector('.add__form');
+const refreshBtn = document.querySelector('.recent__refresh');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -11,10 +12,10 @@ form.addEventListener('submit', (e) => {
 
   const newScore = new Score(user.value, score.value);
 
-  addScoreToArr(newScore);
-  addScoreToDOM(newScore);
-  user.value = '';
-  score.value = '';
+  addScore(newScore);
+  form.reset();
 });
 
-scoresArr.forEach(addScoreToDOM);
+refreshBtn.addEventListener('click', renderScoresToDOM);
+
+renderScoresToDOM();

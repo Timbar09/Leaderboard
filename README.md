@@ -43,7 +43,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Javascript Promises**
+- **Javascript Async and Await**
 
 - **ES6**
 
@@ -141,7 +141,7 @@ You can deploy this project by:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Implement APIs using JavaScrip asynch and await.**
+- [ ] **Implement styling to the application.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
