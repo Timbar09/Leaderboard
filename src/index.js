@@ -1,6 +1,6 @@
 import './style.css';
 import Score from './modules/scoreClass.js';
-import { addScore } from './modules/functions.js';
+import { addScore, getScores, renderScoresToDOM } from './modules/functions.js';
 
 const form = document.querySelector('.add__form');
 
@@ -15,4 +15,4 @@ form.addEventListener('submit', (e) => {
   form.reset();
 });
 
-// scoresArr.forEach(addScoreToDOM);
+renderScoresToDOM();

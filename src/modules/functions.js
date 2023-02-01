@@ -36,3 +36,13 @@ export const addScore = async (score) => {
   const { result } = await response.json();
   return result;
 };
+
+// Render scores to the DOM
+export const renderScoresToDOM = async () => {
+  const scoresContainer = document.querySelector('.recent__scores');
+  scoresContainer.innerHTML = '';
+
+  const scores = await getScores();
+
+  scores.forEach(addScoreToDOM);
+};
