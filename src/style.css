@@ -16,10 +16,11 @@ body {
   --color-light-grey: rgb(231, 228, 227);
   --color-light: rgb(251, 248, 247);
   --color-white: rgb(255, 255, 255);
+  --shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.15);
 
   margin: 0;
   padding: 0;
-  font-weight: 300;
+  font-weight: 500;
   color: var(--color-text);
   background-color: var(--color-white);
 }
@@ -43,8 +44,26 @@ h2 {
   color: var(--color-highlight);
 }
 
-section {
-  border: solid 1px;
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 1px;
+  height: max-content;
+  border: solid 2px var(--border);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: opacity 200ms ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.8;
 }
 
 .section__title {
@@ -66,8 +85,8 @@ section {
   padding-right: 1rem;
 }
 
-.padding-l {
-  padding-left: 1rem;
+.padding-b {
+  padding-bottom: 1rem;
 }
 
 .padding-y {
@@ -121,4 +140,34 @@ section {
 .recent,
 .add {
   flex: 1;
+  width: 100%;
+}
+
+.recent {
+  color: var(--color-light-grey);
+  background-color: var(--color-highlight);
+  box-shadow: var(--shadow);
+}
+
+.recent__title-wrap {
+  gap: 1rem;
+}
+
+.recent__title {
+  color: var(--color-light);
+}
+
+.recent__refresh {
+  --border: var(--color-light-grey);
+
+  background-color: var(--color-light);
+  gap: 0.25rem;
+}
+
+.recent__score {
+  padding: 0.75rem 1rem;
+}
+
+.recent__score:nth-child(even) {
+  background-color: var(--color-text);
 }
