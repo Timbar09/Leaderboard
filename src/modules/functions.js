@@ -5,13 +5,11 @@ const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/game
 export const getScores = async () => {
   const response = await fetch(`${url}`);
   const { result } = await response.json();
+
   return result;
 };
 
-// export const addScoreToArr = (score) => {
-//   scoresArr.push(score);
-// };
-
+// Add score to the DOM
 export const addScoreToDOM = (score) => {
   const scoreItem = document.createElement('li');
   scoreItem.className = 'recent__score';
@@ -19,4 +17,22 @@ export const addScoreToDOM = (score) => {
 
   const scoresContainer = document.querySelector('.recent__scores');
   scoresContainer.appendChild(scoreItem);
+
+  return scoresContainer;
+};
+
+// Add score to API
+export const addScore = async (score) => {
+  const response = await fetch(`${url}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(score),
+  });
+
+  addScoreToDOM(score);
+
+  const { result } = await response.json();
+  return result;
 };

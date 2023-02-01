@@ -1,6 +1,6 @@
 import './style.css';
 import Score from './modules/scoreClass.js';
-import { scoresArr, addScoreToDOM } from './modules/functions.js';
+import { addScore } from './modules/functions.js';
 
 const form = document.querySelector('.add__form');
 
@@ -11,9 +11,8 @@ form.addEventListener('submit', (e) => {
 
   const newScore = new Score(user.value, score.value);
 
-  addScoreToDOM(newScore);
-  user.value = '';
-  score.value = '';
+  addScore(newScore);
+  form.reset();
 });
 
-scoresArr.forEach(addScoreToDOM);
+// scoresArr.forEach(addScoreToDOM);
