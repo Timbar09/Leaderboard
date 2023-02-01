@@ -52,18 +52,13 @@ ul {
 
 .btn {
   padding: 0.5rem 1rem;
-  font-family: inherit;
   font-weight: 700;
   letter-spacing: 1px;
   height: max-content;
   border: solid 2px var(--border);
   cursor: pointer;
   box-shadow: var(--shadow);
-  transition: opacity 200ms ease-in-out;
-}
-
-.btn:hover {
-  opacity: 0.8;
+  transition: opacity 200ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out;
 }
 
 .section__title {
@@ -80,17 +75,7 @@ ul {
   padding: 1rem;
 }
 
-.padding-x {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 .padding-b {
-  padding-bottom: 1rem;
-}
-
-.padding-y {
-  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
@@ -164,10 +149,63 @@ ul {
   gap: 0.25rem;
 }
 
+.recent__refresh:hover {
+  opacity: 0.8;
+}
+
 .recent__score {
   padding: 0.75rem 1rem;
 }
 
 .recent__score:nth-child(even) {
   background-color: var(--color-text);
+}
+
+.add {
+  text-align: center;
+}
+
+@media (min-width: 40em) {
+  .add {
+    text-align: left;
+  }
+}
+
+.form__input-container:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 40em) {
+  .form__input-container:last-child {
+    text-align: right;
+  }
+}
+
+.add__input {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-width: 25rem;
+  font-weight: inherit;
+  border-radius: 0;
+  border: solid 1px var(--color-light-grey);
+  outline-offset: 3px;
+  outline-width: 1px;
+  outline-color: var(--color-light-grey);
+}
+
+.add__input:focus {
+  border: solid 1px var(--color-highlight);
+}
+
+.submit {
+  --border: rgb(0, 0, 0);
+
+  color: var(--color-light);
+  background-color: var(--color-highlight);
+  border: solid 2px var(--border);
+}
+
+.submit:hover {
+  --color-highlight: rgb(2, 186, 2);
+  --border: var(--color-white);
 }
