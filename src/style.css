@@ -24,6 +24,13 @@ body {
   background-color: var(--color-white);
 }
 
+.app {
+  flex-direction: column;
+  height: 80vh;
+  overflow-y: scroll;
+  border: solid 1px;
+}
+
 .container {
   max-width: 60em;
   margin: auto;
@@ -32,10 +39,6 @@ body {
 h1,
 h2 {
   margin: 0;
-}
-
-.title {
-  margin-bottom: 3rem;
 }
 
 section {
@@ -74,8 +77,16 @@ section {
   justify-content: space-between;
 }
 
+.flex-jc-c {
+  justify-content: center;
+}
+
 .flex-ai-c {
   align-items: center;
+}
+
+.title {
+  font-size: 3rem;
 }
 
 .main .container {
