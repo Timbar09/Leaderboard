@@ -42,6 +42,30 @@ section {
   border: solid 1px;
 }
 
+.padding {
+  padding: 1rem;
+}
+
+.padding-x {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.padding-l {
+  padding-left: 1rem;
+}
+
+.padding-y {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 40em) {
+  .padding {
+    padding: 2rem;
+  }
+}
+
 .flex {
   display: flex;
 }
@@ -55,7 +79,14 @@ section {
 }
 
 .main .container {
+  flex-direction: column;
   gap: 2rem;
+}
+
+@media (min-width: 40em) {
+  .main .container {
+    flex-direction: row;
+  }
 }
 
 .recent,
