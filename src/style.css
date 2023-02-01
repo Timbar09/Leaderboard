@@ -28,9 +28,8 @@ body {
 .app {
   flex-direction: column;
   min-height: 27rem;
-  height: 90vh;
+  height: 82vh;
   overflow-y: scroll;
-  border: solid 1px;
 }
 
 .container {
@@ -101,8 +100,38 @@ ul {
   align-items: center;
 }
 
+@keyframes load {
+  from {
+    width: 0;
+  }
+
+  50% {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
 .title {
   font-size: 3rem;
+}
+
+.title span {
+  display: inline-block;
+  position: relative;
+}
+
+.title span::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: -1rem;
+  background-color: var(--color-text);
+  animation: load 3000ms ease-out 1 forwards;
 }
 
 @media (min-width: 40em) {
@@ -208,4 +237,28 @@ ul {
 .submit:hover {
   --color-highlight: rgb(2, 186, 2);
   --border: var(--color-white);
+}
+
+.footer {
+  border-top: 1px solid var(--color-light-grey);
+  color: var(--color-light-grey);
+}
+
+.footer .container {
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  --dimension: 3rem;
+
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: inherit;
+  height: var(--dimension);
+  width: var(--dimension);
+  line-height: var(--dimension);
+  text-align: center;
+  border-radius: 50%;
+  border: solid 2px currentColor;
 }
