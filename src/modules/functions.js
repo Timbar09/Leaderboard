@@ -13,7 +13,6 @@ export const getScores = async () => {
 export const addScoreToDOM = (score) => {
   const scoreItem = document.createElement('li');
   scoreItem.className = 'recent__score flex';
-  scoreItem.textContent = `${score.user}: ${score.score}`;
 
   const userName = document.createElement('span');
   userName.className = 'recent__score-user';
@@ -53,7 +52,12 @@ export const renderScoresToDOM = async () => {
   const scoresContainer = document.querySelector('.recent__scores');
   scoresContainer.innerHTML = '';
 
+  const refreshBtn = document.querySelector('.recent__refresh');
+  refreshBtn.disabled = true;
+
   const scores = await getScores();
 
   scores.forEach(addScoreToDOM);
+
+  refreshBtn.disabled = false;
 };

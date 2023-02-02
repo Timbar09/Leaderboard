@@ -9,10 +9,13 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   const user = document.querySelector('#user');
   const score = document.querySelector('#score');
-
   const newScore = new Score(user.value, score.value);
 
+  const submitBtn = document.querySelector('.submit');
+  submitBtn.disabled = true;
+
   addScore(newScore);
+  submitBtn.disabled = false;
   form.reset();
 });
 
