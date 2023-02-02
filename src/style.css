@@ -6,22 +6,30 @@ html {
 *,
 *::before,
 *::after {
+  font-family: 'Chakra Petch', sans-serif;
   box-sizing: inherit;
 }
 
 body {
   --color-highlight: rgb(49, 45, 44);
-  --color-text: rgb(70, 66, 65);
+  --color-text: rgb(71, 70, 69);
   --color-light-grey: rgb(231, 228, 227);
   --color-light: rgb(251, 248, 247);
   --color-white: rgb(255, 255, 255);
+  --shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.15);
 
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   color: var(--color-text);
   background-color: var(--color-white);
+}
+
+.app {
+  flex-direction: column;
+  min-height: 27rem;
+  height: 82vh;
+  overflow-y: scroll;
 }
 
 .container {
@@ -32,14 +40,48 @@ body {
 h1,
 h2 {
   margin: 0;
+  color: var(--color-highlight);
 }
 
-.title {
-  margin-bottom: 3rem;
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-section {
-  border: solid 1px;
+.btn {
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  height: max-content;
+  border: solid 2px var(--border);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: opacity 200ms ease-in-out, background-color 200ms ease-in-out, border 200ms ease-in-out;
+}
+
+.section__title {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 40em) {
+  .section__title {
+    font-size: 2rem;
+  }
+}
+
+.padding {
+  padding: 1rem;
+}
+
+.padding-b {
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 40em) {
+  .padding {
+    padding: 2rem;
+  }
 }
 
 .flex {
@@ -50,15 +92,185 @@ section {
   justify-content: space-between;
 }
 
+.flex-jc-c {
+  justify-content: center;
+}
+
 .flex-ai-c {
   align-items: center;
 }
 
+@keyframes load {
+  from {
+    width: 0;
+  }
+
+  50% {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.title span {
+  display: inline-block;
+  position: relative;
+}
+
+.title span::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: -1rem;
+  background-color: var(--color-text);
+  animation: load 3000ms ease-out 1 forwards;
+}
+
+@media (min-width: 40em) {
+  .title {
+    font-size: 4.5rem;
+  }
+}
+
 .main .container {
+  flex-direction: column;
   gap: 2rem;
+}
+
+@media (min-width: 40em) {
+  .main .container {
+    flex-direction: row;
+  }
 }
 
 .recent,
 .add {
   flex: 1;
+  width: 100%;
+}
+
+.recent {
+  color: var(--color-light-grey);
+  background-color: var(--color-highlight);
+  box-shadow: var(--shadow);
+}
+
+.recent__title-wrap {
+  gap: 1rem;
+}
+
+.recent__title {
+  color: var(--color-light);
+}
+
+.recent__refresh {
+  --border: var(--color-light-grey);
+
+  background-color: var(--color-light);
+  gap: 0.25rem;
+}
+
+.recent__refresh:hover {
+  opacity: 0.8;
+}
+
+.recent__refresh span {
+  font-size: 1rem;
+}
+
+.recent__score {
+  padding: 0.75rem 1rem;
+}
+
+.recent__score:nth-child(even) {
+  background-color: var(--color-text);
+}
+
+.recent__score span {
+  flex: 1;
+}
+
+.recent__score-score {
+  color: var(--color-white);
+}
+
+.add {
+  text-align: center;
+}
+
+@media (min-width: 40em) {
+  .add {
+    text-align: left;
+  }
+}
+
+.form__input-container:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 40em) {
+  .form__input-container:last-child {
+    text-align: right;
+  }
+}
+
+.add__input {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-width: 25rem;
+  font-weight: inherit;
+  border-radius: 0;
+  border: solid 1px var(--color-light-grey);
+  outline-offset: 3px;
+  outline-width: 1px;
+  outline-color: var(--color-light-grey);
+}
+
+.add__input:focus {
+  border: solid 1px var(--color-highlight);
+}
+
+.submit {
+  --border: rgb(0, 0, 0);
+
+  color: var(--color-light);
+  background-color: var(--color-highlight);
+  border: solid 2px var(--border);
+}
+
+.submit:hover {
+  --color-highlight: rgb(2, 186, 2);
+  --border: var(--color-white);
+}
+
+.footer {
+  border-top: 1px solid var(--color-light-grey);
+  color: var(--color-light-grey);
+}
+
+.footer .container {
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  --dimension: 3rem;
+
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: inherit;
+  height: var(--dimension);
+  width: var(--dimension);
+  line-height: var(--dimension);
+  text-align: center;
+  border-radius: 50%;
+  border: solid 2px currentColor;
 }

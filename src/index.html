@@ -4,46 +4,79 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Leaderboard | Miles Mosweu</title>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <h1 class="title">Leaderboard</h1>
+    <div class="app flex flex-jc-c">
+      <header class="header">
+        <div class="container padding">
+          <h1 class="title"><span>Leaderboard</span></h1>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="container flex flex-ai-c padding">
+          <section class="recent padding">
+            <div class="recent__title-wrap flex flex-jc-sb flex-ai-c padding-b">
+              <h2 class="recent__title section__title">Recent Scores</h2>
+              <button class="recent__refresh btn flex flex-ai-c">
+                Refresh <span class="material-symbols-outlined"> autorenew </span>
+              </button>
+            </div>
+
+            <ul class="recent__scores">
+              <li class="recent__score flex">
+                <span class="recent__score-user">Miles</span> <span class="recent__score-score">2000</span>
+              </li>
+              <li class="recent__score flex">
+                <span class="recent__score-user">Timbar</span> <span class="recent__score-score">2000</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="add">
+            <h2 class="add__title section__title padding-b">Add your score</h2>
+
+            <form action="#" class="add__form">
+              <div class="form__input-container">
+                <input class="add__input" type="text" id="user" name="user_name" placeholder="Your name" required />
+              </div>
+
+              <div class="form__input-container">
+                <input
+                  class="add__input"
+                  type="number"
+                  id="score"
+                  name="user_score"
+                  placeholder="Your score"
+                  required
+                />
+              </div>
+
+              <div class="form__input-container">
+                <input class="submit btn" type="submit" value="Submit +" />
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="container flex flex-jc-c flex-ai-c padding">
+        <a href="https://github.com/Timbar09" class="logo" target="_blank">MM</a>
+        <p class="copyright">&copy; Miles Mosweu Artistry. Some rights reserved</p>
       </div>
-    </header>
-
-    <main class="main">
-      <div class="container flex">
-        <section class="recent">
-          <div class="recent__title-wrap flex flex-jc-sb">
-            <h2 class="recent__title section__title">Recent Scores</h2>
-            <button class="recent__refresh btn">Refresh</button>
-          </div>
-
-          <ul class="recent__scores"></ul>
-        </section>
-
-        <section class="add">
-          <h2 class="add__title">Add your score</h2>
-
-          <form action="#" class="add__form">
-            <div class="input__container">
-              <input type="text" id="user" name="user_name" placeholder="Your name" required />
-            </div>
-
-            <div class="input__container">
-              <input type="number" id="score" name="user_score" placeholder="Your score" required />
-            </div>
-
-            <div class="input__container">
-              <input type="submit" />
-            </div>
-          </form>
-        </section>
-      </div>
-    </main>
-
-    <footer class="footer"></footer>
+    </footer>
   </body>
 </html>
