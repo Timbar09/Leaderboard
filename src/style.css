@@ -12,7 +12,7 @@ html {
 
 body {
   --color-highlight: rgb(49, 45, 44);
-  --color-text: rgb(70, 66, 65);
+  --color-text: rgb(71, 70, 69);
   --color-light-grey: rgb(231, 228, 227);
   --color-light: rgb(251, 248, 247);
   --color-white: rgb(255, 255, 255);
@@ -182,12 +182,24 @@ ul {
   opacity: 0.8;
 }
 
+.recent__refresh span {
+  font-size: 1rem;
+}
+
 .recent__score {
   padding: 0.75rem 1rem;
 }
 
 .recent__score:nth-child(even) {
   background-color: var(--color-text);
+}
+
+.recent__score span {
+  flex: 1;
+}
+
+.recent__score-score {
+  color: var(--color-white);
 }
 
 .add {

@@ -12,8 +12,19 @@ export const getScores = async () => {
 // Add score to the DOM
 export const addScoreToDOM = (score) => {
   const scoreItem = document.createElement('li');
-  scoreItem.className = 'recent__score';
+  scoreItem.className = 'recent__score flex';
   scoreItem.textContent = `${score.user}: ${score.score}`;
+
+  const userName = document.createElement('span');
+  userName.className = 'recent__score-user';
+  userName.textContent = score.user;
+
+  const userScore = document.createElement('span');
+  userScore.className = 'recent__score-score';
+  userScore.textContent = score.score;
+
+  scoreItem.appendChild(userName);
+  scoreItem.appendChild(userScore);
 
   const scoresContainer = document.querySelector('.recent__scores');
   scoresContainer.appendChild(scoreItem);
