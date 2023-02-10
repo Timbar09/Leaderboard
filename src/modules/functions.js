@@ -32,7 +32,7 @@ export const addScoreToDOM = (score) => {
 };
 
 // Add score to API
-export const addScore = async (score) => {
+export const addScoreToAPI = async (score) => {
   const response = await fetch(`${url}`, {
     method: 'POST',
     headers: {
@@ -40,8 +40,6 @@ export const addScore = async (score) => {
     },
     body: JSON.stringify(score),
   });
-
-  addScoreToDOM(score);
 
   const { result } = await response.json();
   return result;
