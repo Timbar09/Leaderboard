@@ -99,6 +99,16 @@ ul {
   align-items: center;
 }
 
+@keyframes refresh {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 365deg;
+  }
+}
+
 @keyframes load {
   from {
     width: 0;
@@ -183,6 +193,10 @@ ul {
 
 .recent__refresh span {
   font-size: 1rem;
+}
+
+.recent__refresh span.refresh {
+  animation: refresh 500ms linear 3 forwards;
 }
 
 .recent__scores {

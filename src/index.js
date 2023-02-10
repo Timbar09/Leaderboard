@@ -25,7 +25,14 @@ form.addEventListener('submit', (e) => {
 
 refreshBtn.addEventListener('click', async () => {
   const scores = await fetchScores();
+  const refreshIcon = document.querySelector('.recent__refresh span');
+
+  refreshIcon.classList.add('refresh');
   renderScoresToDOM(scores, addScoreToDOM);
+
+  refreshIcon.addEventListener('animationend', () => {
+    refreshIcon.classList.remove('refresh');
+  });
 });
 
 window.addEventListener('load', async () => {
