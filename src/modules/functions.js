@@ -2,7 +2,7 @@ const gameId = 'DzTobOKlFqCNaD87Ic3E';
 const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores`;
 
 // Fetch scores form API
-export const getScores = async () => {
+export const fetchScores = async () => {
   const response = await fetch(`${url}`);
   const { result } = await response.json();
 
@@ -46,14 +46,12 @@ export const addScoreToAPI = async (score) => {
 };
 
 // Render scores to the DOM
-export const renderScoresToDOM = async () => {
+export const renderScoresToDOM = async (scores, addScoreToDOM) => {
   const scoresContainer = document.querySelector('.recent__scores');
   scoresContainer.innerHTML = '';
 
   const refreshBtn = document.querySelector('.recent__refresh');
   refreshBtn.disabled = true;
-
-  const scores = await getScores();
 
   scores.forEach(addScoreToDOM);
 
